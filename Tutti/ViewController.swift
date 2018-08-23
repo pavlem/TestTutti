@@ -13,24 +13,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let point1 = CGPoint(x: 50, y: 50)
-        let point2 = CGPoint(x: 50, y: 60)
-        let point3 = CGPoint(x: 50, y: 70)
-        let point4 = CGPoint(x: 50, y: 80)
-
-        var arr = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
-        arr[0] = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 50))
-        arr[1] = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 60))
-        arr[2] = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 70))
-        arr[3] = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 80))
-
-        defer {
-            arr.deinitialize(count: 4)
-            arr.deallocate()
-        }
+        let msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 50))
+        let msg2 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 60))
+        let msg3 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 70))
+        let msg4 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 80))
         
-//        requestNextMove(&arr.advanced(by: 1))
-//        requestNextMove(&arr)
+        var msgs = [msg1, msg2, msg3, msg4]
+        
+        let intPointer: UnsafeMutablePointer<Msg> = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
+        for i in 0..<4 {
+            (intPointer + i).initialize(to: msgs[i])
+        }
+        print(intPointer.pointee)
+        print(intPointer.advanced(by: 1).pointee)
+        print(intPointer.advanced(by: 2).pointee)
+        print(intPointer.advanced(by: 3).pointee)
+        
+        requestNextMove(&intPointer.advanced(by: 1))
+        
+        intPointer.deallocate()
     }
 }
 
