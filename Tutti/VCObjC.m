@@ -25,13 +25,24 @@
     
     struct Msg **messages = malloc(sizeof(struct Msg*));
     
-    for (int i = 0; i < 4; i++) {
-        requestNextMove(messages + 1);
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+//
+//    });
+    
+    
+    for (int i = 0; i < 6; i++) {
+        NSLog(@"========");
+        requestNextMove(messages + i);
         struct Msg *message = messages[i];
         int value = message->msg;
         CGPoint point = message->point;
         NSLog(@"%@, %@", @(value), @(point));
+        NSLog(@"message is: %p", message);
+        NSLog(@"messages + i is: %p", messages + i);
+        NSLog(@"");
     }
+    
+    NSLog(@"=====FINISHED=====");
 }
 
 @end

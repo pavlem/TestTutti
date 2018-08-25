@@ -25,7 +25,7 @@ class CustomView: UIView {
         super.draw(rect)
   
 //        createTriangle()
-        drawTuttiAPI()
+//        drawTuttiAPI()
 //        createTriangleCoreGraphics()
         
 //        var arr: UnsafeMutablePointer<Msg>? = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
@@ -41,16 +41,11 @@ class CustomView: UIView {
     }
     
     func drawTuttiAPI() {
-//        var msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: self.frame.width/2, y: 0))
-//        var msg2 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 0, y: self.frame.size.height))
-//        var msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
-//        var msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: self.frame.width/2, y: 0))
-//        var msgs = [msg1, msg2, msg3, msg4]
-        
         var msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: self.frame.width/2, y: 0))
         var msg2 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 0, y: self.frame.size.height))
         var msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
         var msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: self.frame.width/2, y: 0))
+        
         var msgs = [msg1, msg2, msg3, msg4]
         
         let intPointer: UnsafeMutablePointer<Msg> = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
@@ -66,16 +61,20 @@ class CustomView: UIView {
         
         print(value1!); print(value2!); print(value3!); print(value4!)
         
+        var values = [value1, value2, value3, value4]
         
+        for i in 0..<values.count {
+            var value = values[i]
+            requestNextMove(&value)
+            print(i)
+        }
         
-        requestNextMove(&value1)
-        requestNextMove(&value2)
-        requestNextMove(&value3)
-        requestNextMove(&value4)
-        
-        requestNextMove(&msg1)
+//        requestNextMove(&value1)
+//        requestNextMove(&value2)
+//        requestNextMove(&value3)
+//        requestNextMove(&value4)
 
-//        struct Msg **messages = malloc(sizeof(struct Msg*));
+        //        struct Msg **messages = malloc(sizeof(struct Msg*));
 //
 //        for (int i = 0; i < 4; i++) {
 //            requestNextMove(messages + 1);
@@ -85,9 +84,9 @@ class CustomView: UIView {
 //            NSLog(@"%@, %@", @(value), @(point));
 //        }
         
-        requestNextMove(&intPointer.advanced(by: 0))
+//        requestNextMove(&intPointer.advanced(by: 0))
 
-        
+        createTriangle()
         intPointer.deallocate()
     }
     

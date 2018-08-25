@@ -16,6 +16,7 @@
 		9E50762F2128B82600720020 /* TuttiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E50762E2128B82600720020 /* TuttiUITests.swift */; };
 		9E72F5872128C01A00FE7772 /* DrawingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E72F5862128C01900FE7772 /* DrawingAPI.framework */; };
 		9E769504213158350055C487 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769503213158340055C487 /* CustomView.swift */; };
+		9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */; };
 		9E90A63B212C920900496FB6 /* VCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90A63A212C920900496FB6 /* VCObjC.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		9E72F5822128BF7900FE7772 /* Tutti-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tutti-Bridging-Header.h"; sourceTree = "<group>"; };
 		9E72F5862128C01900FE7772 /* DrawingAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DrawingAPI.framework; sourceTree = "<group>"; };
 		9E769503213158340055C487 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRandMsgs.swift; sourceTree = "<group>"; };
 		9E90A639212C920900496FB6 /* VCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCObjC.h; sourceTree = "<group>"; };
 		9E90A63A212C920900496FB6 /* VCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				9E50760E2128B82400720020 /* AppDelegate.swift */,
 				9E5076102128B82400720020 /* ViewController.swift */,
 				9E769503213158340055C487 /* CustomView.swift */,
+				9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */,
 				9E5076122128B82400720020 /* Main.storyboard */,
 				9E90A639212C920900496FB6 /* VCObjC.h */,
 				9E90A63A212C920900496FB6 /* VCObjC.m */,
@@ -275,6 +278,7 @@
 				9E769504213158350055C487 /* CustomView.swift in Sources */,
 				9E50760F2128B82400720020 /* AppDelegate.swift in Sources */,
 				9E90A63B212C920900496FB6 /* VCObjC.m in Sources */,
+				9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
