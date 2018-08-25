@@ -13,25 +13,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 50))
-        let msg2 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 60))
-        let msg3 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 70))
-        let msg4 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 80))
-        
-        var msgs = [msg1, msg2, msg3, msg4]
-        
-        let intPointer: UnsafeMutablePointer<Msg> = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
-        for i in 0..<4 {
-            (intPointer + i).initialize(to: msgs[i])
-        }
-        print(intPointer.pointee)
-        print(intPointer.advanced(by: 1).pointee)
-        print(intPointer.advanced(by: 2).pointee)
-        print(intPointer.advanced(by: 3).pointee)
-        
-        requestNextMove(&intPointer.advanced(by: 1))
-        
-        intPointer.deallocate()
+//        let msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 50, y: 50))
+//        let msg2 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 50, y: 60))
+//        let msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 50, y: 70))
+//        let msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 50, y: 80))
+//        
+//        var msgs = [msg1, msg2, msg3, msg4]
+//        
+//        let intPointer: UnsafeMutablePointer<Msg> = UnsafeMutablePointer<Msg>.allocate(capacity: 4)
+//        for i in 0..<4 {
+//            (intPointer + i).initialize(to: msgs[i])
+//        }
+//        print(intPointer.pointee)
+//        print(intPointer.advanced(by: 1).pointee)
+//        print(intPointer.advanced(by: 2).pointee)
+//        print(intPointer.advanced(by: 3).pointee)
+//        
+//        var value1: UnsafeMutablePointer<Msg>? = intPointer.advanced(by: 0)
+//        var value2: UnsafeMutablePointer<Msg>? = intPointer.advanced(by: 1)
+//        var value3: UnsafeMutablePointer<Msg>? = intPointer.advanced(by: 2)
+//
+//        requestNextMove(&value1)
+//        requestNextMove(&value2)
+//        requestNextMove(&value3)
+//        
+//        intPointer.deallocate()
     }
 }
 

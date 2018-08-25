@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qQm-2v-Qd6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,21 +23,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiW-ve-vN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="-654"/>
+            <point key="canvasLocation" x="262" y="-671"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="SAj-HF-mqb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tutti" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="qQm-2v-Qd6" customClass="ViewController" customModule="Tutti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zqe-XG-oYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-av-dko" customClass="CustomView" customModule="Tutti" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="341" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.75547960069999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="abu-1p-Vox" firstAttribute="trailing" secondItem="qI2-av-dko" secondAttribute="trailing" constant="18" id="FFM-f7-QJk"/>
+                            <constraint firstItem="abu-1p-Vox" firstAttribute="bottom" secondItem="qI2-av-dko" secondAttribute="bottom" constant="200" id="N1L-Mx-aU9"/>
+                            <constraint firstItem="qI2-av-dko" firstAttribute="top" secondItem="abu-1p-Vox" secondAttribute="top" id="aq3-zt-PPQ"/>
+                            <constraint firstItem="qI2-av-dko" firstAttribute="leading" secondItem="abu-1p-Vox" secondAttribute="leading" constant="16" id="j4H-rI-V1L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="abu-1p-Vox"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBg-ft-CGJ" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="262" y="3"/>
         </scene>
     </scenes>
 </document>
