@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9E50760F2128B82400720020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E50760E2128B82400720020 /* AppDelegate.swift */; };
-		9E5076112128B82400720020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5076102128B82400720020 /* ViewController.swift */; };
 		9E5076142128B82400720020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5076122128B82400720020 /* Main.storyboard */; };
 		9E5076162128B82500720020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5076152128B82500720020 /* Assets.xcassets */; };
 		9E5076192128B82500720020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5076172128B82500720020 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */; };
 		9E76950B2132C0550055C487 /* DrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950A2132C0550055C487 /* DrawVC.swift */; };
 		9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950C2132CB2D0055C487 /* DrawingEngine.swift */; };
+		9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */; };
 		9E90A63B212C920900496FB6 /* VCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90A63A212C920900496FB6 /* VCObjC.m */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		9E50760B2128B82400720020 /* Tutti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E50760E2128B82400720020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E5076102128B82400720020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E5076132128B82400720020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E5076152128B82500720020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E5076182128B82500720020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRandMsgs.swift; sourceTree = "<group>"; };
 		9E76950A2132C0550055C487 /* DrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawVC.swift; sourceTree = "<group>"; };
 		9E76950C2132CB2D0055C487 /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
+		9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApiMoc.swift; sourceTree = "<group>"; };
 		9E90A639212C920900496FB6 /* VCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCObjC.h; sourceTree = "<group>"; };
 		9E90A63A212C920900496FB6 /* VCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,18 +113,15 @@
 		9E50760D2128B82400720020 /* Tutti */ = {
 			isa = PBXGroup;
 			children = (
-				9E5076122128B82400720020 /* Main.storyboard */,
+				9E7695102132D1160055C487 /* Resources */,
 				9E76950A2132C0550055C487 /* DrawVC.swift */,
+				9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */,
 				9E76950C2132CB2D0055C487 /* DrawingEngine.swift */,
 				9E50760E2128B82400720020 /* AppDelegate.swift */,
-				9E5076102128B82400720020 /* ViewController.swift */,
 				9E769503213158340055C487 /* CustomView.swift */,
 				9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */,
 				9E90A639212C920900496FB6 /* VCObjC.h */,
 				9E90A63A212C920900496FB6 /* VCObjC.m */,
-				9E5076152128B82500720020 /* Assets.xcassets */,
-				9E5076172128B82500720020 /* LaunchScreen.storyboard */,
-				9E50761A2128B82500720020 /* Info.plist */,
 				9E72F5822128BF7900FE7772 /* Tutti-Bridging-Header.h */,
 			);
 			path = Tutti;
@@ -146,6 +143,17 @@
 				9E5076302128B82600720020 /* Info.plist */,
 			);
 			path = TuttiUITests;
+			sourceTree = "<group>";
+		};
+		9E7695102132D1160055C487 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E5076152128B82500720020 /* Assets.xcassets */,
+				9E5076122128B82400720020 /* Main.storyboard */,
+				9E50761A2128B82500720020 /* Info.plist */,
+				9E5076172128B82500720020 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E5076112128B82400720020 /* ViewController.swift in Sources */,
 				9E769504213158350055C487 /* CustomView.swift in Sources */,
 				9E50760F2128B82400720020 /* AppDelegate.swift in Sources */,
+				9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */,
 				9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */,
 				9E90A63B212C920900496FB6 /* VCObjC.m in Sources */,
 				9E76950B2132C0550055C487 /* DrawVC.swift in Sources */,
@@ -467,7 +475,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = DrawingAPI.framework/Headers;
-				INFOPLIST_FILE = Tutti/Info.plist;
+				INFOPLIST_FILE = Tutti/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,7 +501,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = DrawingAPI.framework/Headers;
-				INFOPLIST_FILE = Tutti/Info.plist;
+				INFOPLIST_FILE = Tutti/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

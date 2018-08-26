@@ -17,17 +17,18 @@ class DrawingEngine {
     var initalPoint = CGPoint(x: 100.0, y: 100.0)
 
     func drawOn(view: UIView, withMessage msg: Msg) {
-        var path: UIBezierPath!
-        path = UIBezierPath()
+//        let path = UIBezierPath()
         path.move(to: self.initalPoint)
         
         switch msg.msg {
         case MsgsGoToPoint:
-            initalPoint = msg.point
-            path.move(to: self.initalPoint)
+            goToPoint(msg: msg)
+//            initalPoint = msg.point
+//            path.move(to: self.initalPoint)
         case MsgsDrawLineToPoint:
-            path.addLine(to: msg.point)
-            initalPoint = msg.point
+            drawALineToAPoint(msg: msg)
+//            path.addLine(to: msg.point)
+//            initalPoint = msg.point
         case MsgsClearDrawing:
             print("MsgsClearDrawing")
         case MsgsDoNothing:
@@ -35,12 +36,26 @@ class DrawingEngine {
         default:
             print("default - MsgsDoNothing")
         }
-    
+        
         let pathLayer = getPathLayer(forView: view, andPath: path)
         view.layer.addSublayer(pathLayer)
         let pathAnimation = setAnimation()
         pathLayer.add(pathAnimation, forKey: "strokeEnd")
         
+    }
+
+    // MARK: - Properties
+    let path = UIBezierPath()
+    
+    // MARK: - Helper
+    private func goToPoint(msg: Msg) {
+        initalPoint = msg.point
+        path.move(to: self.initalPoint)
+    }
+    
+    private func drawALineToAPoint(msg: Msg) {
+        path.addLine(to: msg.point)
+        initalPoint = msg.point
     }
     
     private func getPathLayer(forView view: UIView, andPath path: UIBezierPath) -> CAShapeLayer {

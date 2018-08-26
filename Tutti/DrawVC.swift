@@ -10,28 +10,29 @@ import UIKit
 
 class DrawVC: UIViewController {
     
+    // MARK: - Properties
     let drawingEngine = DrawingEngine()
-
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 120, y: 120))
-        let msg2 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 150, y: 200))
-        let msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 150, y: 100))
-        let msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 250, y: 50))
-        let msg5 = Msg(msg: MsgsDoNothing, point: CGPoint(x: 200, y: 50))
-        let msg6 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 300, y: 300))
-        let msg7 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 200))
+        startDrawing()
+    }
+    
+    // MARK: - Helper
+    private func startDrawing() {
+        let drawingAPIMoc = DrawingApiMoc()
+        drawingAPIMoc.delegate = self
+        drawingAPIMoc.requestNextMove()
+    }
+}
 
-        let msgs = [msg1, msg2, msg3, msg4, msg5, msg6, msg7]
-
-        DispatchQueue.global(qos: .background).async {
-            for msgLo in msgs {
-                sleep(1)
-                DispatchQueue.main.async {
-                    self.drawingEngine.drawOn(view: self.view, withMessage: msgLo)
-                }
-            }
+// MARK: - DrawingApiMocProtocol delegate
+extension DrawVC: DrawingApiMocProtocol {
+    func draw(msg: Msg) {
+        DispatchQueue.main.async {
+            self.drawingEngine.drawOn(view: self.view, withMessage: msg)
         }
     }
 }
