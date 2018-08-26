@@ -14,48 +14,52 @@ class DrawingEngine {
     static let shared = DrawingEngine()
 
     // MARK: - API
-    var initalPoint = CGPoint(x: 100.0, y: 100.0)
+    var startingPoint = CGPoint(x: 100.0, y: 100.0)
 
     func drawOn(view: UIView, withMessage msg: Msg) {
-//        let path = UIBezierPath()
-        path.move(to: self.initalPoint)
-        
-        switch msg.msg {
-        case MsgsGoToPoint:
-            goToPoint(msg: msg)
-//            initalPoint = msg.point
-//            path.move(to: self.initalPoint)
-        case MsgsDrawLineToPoint:
-            drawALineToAPoint(msg: msg)
-//            path.addLine(to: msg.point)
-//            initalPoint = msg.point
-        case MsgsClearDrawing:
-            print("MsgsClearDrawing")
-        case MsgsDoNothing:
-            print("MsgsDoNothing")
-        default:
-            print("default - MsgsDoNothing")
-        }
-        
+        var path = UIBezierPath()
+        path.move(to: self.startingPoint)
+        handle(msg: msg, for: &path)
         let pathLayer = getPathLayer(forView: view, andPath: path)
         view.layer.addSublayer(pathLayer)
         let pathAnimation = setAnimation()
         pathLayer.add(pathAnimation, forKey: "strokeEnd")
-        
     }
-
-    // MARK: - Properties
-    let path = UIBezierPath()
     
     // MARK: - Helper
-    private func goToPoint(msg: Msg) {
-        initalPoint = msg.point
-        path.move(to: self.initalPoint)
+    private func handle(msg: Msg, for path: inout UIBezierPath) {
+        switch msg.msg {
+        case MsgsGoToPoint:
+            goToPoint(msg: msg, path: &path)
+        case MsgsDrawLineToPoint:
+            drawALineToAPoint(msg: msg, path: &path)
+        case MsgsClearDrawing:
+            clearDrawing()
+        case MsgsDoNothing:
+            doNothing()
+        default:
+            doNothing()
+        }
     }
     
-    private func drawALineToAPoint(msg: Msg) {
+    private func goToPoint(msg: Msg, path: inout UIBezierPath) {
+        print("MsgsGoToPoint")
+        startingPoint = msg.point
+        path.move(to: self.startingPoint)
+    }
+    
+    private func drawALineToAPoint(msg: Msg, path: inout UIBezierPath) {
+        print("MsgsDrawLineToPoint")
         path.addLine(to: msg.point)
-        initalPoint = msg.point
+        startingPoint = msg.point
+    }
+    
+    private func doNothing() {
+        print("MsgsDoNothing")
+    }
+    
+    private func clearDrawing() {
+        print("MsgsClearDrawing")
     }
     
     private func getPathLayer(forView view: UIView, andPath path: UIBezierPath) -> CAShapeLayer {
@@ -64,14 +68,14 @@ class DrawingEngine {
         pathLayer.path = path.cgPath
         pathLayer.strokeColor = UIColor.red.cgColor
         pathLayer.fillColor = nil
-        pathLayer.lineWidth = 2.0
+        pathLayer.lineWidth = 2.5
         pathLayer.lineJoin = kCALineJoinBevel
         return pathLayer
     }
     
     private func setAnimation() -> CABasicAnimation {
         let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 0.5
+        pathAnimation.duration = 0.6
         pathAnimation.fromValue = NSNumber(value: 0.0)
         pathAnimation.toValue = NSNumber(value: 1.0)
         return pathAnimation
