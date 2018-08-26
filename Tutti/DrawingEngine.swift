@@ -75,7 +75,7 @@ class DrawingEngine {
     
     private func setAnimation() -> CABasicAnimation {
         let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 0.6
+        pathAnimation.duration = 0.4
         pathAnimation.fromValue = NSNumber(value: 0.0)
         pathAnimation.toValue = NSNumber(value: 1.0)
         return pathAnimation

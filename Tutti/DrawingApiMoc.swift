@@ -20,7 +20,7 @@ class DrawingApiMoc {
     func requestNextMove() {
         DispatchQueue.global(qos: .background).async {
             for message in self.msgs {
-                sleep(1)
+                Thread.sleep(forTimeInterval: 0.6)
                 self.delegate?.draw(msg: message)
             }
         }

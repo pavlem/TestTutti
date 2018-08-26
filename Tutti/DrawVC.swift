@@ -26,6 +26,13 @@ class DrawVC: UIViewController {
         drawingAPIMoc.delegate = self
         drawingAPIMoc.requestNextMove()
     }
+
+    @IBAction func removeAll(_ sender: UIButton) {
+        
+        for sublayer in view.layer.sublayers! where sublayer is CAShapeLayer {
+            sublayer.removeFromSuperlayer()
+        }
+    }
 }
 
 // MARK: - DrawingApiMocProtocol delegate
