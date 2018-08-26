@@ -20,7 +20,9 @@ class DrawingApiMoc {
     func requestNextMove() {
         DispatchQueue.global(qos: .background).async {
             for message in self.msgs {
-                Thread.sleep(forTimeInterval: 0.6)
+                let randomNumDouble  = Double.random(min: 0.5, max: 1.50)
+                print("rand: \(randomNumDouble)")
+                Thread.sleep(forTimeInterval: randomNumDouble)
                 self.delegate?.draw(msg: message)
             }
         }
@@ -34,8 +36,19 @@ class DrawingApiMoc {
     let msg5 = Msg(msg: MsgsDoNothing, point: CGPoint(x: 200, y: 50))
     let msg6 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 300, y: 400))
     let msg7 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 350, y: 400))
-    
+    let msg8 = Msg(msg: MsgsClearDrawing, point: CGPoint(x: 350, y: 400))
+    let msg9 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 600))
+
     var msgs: [Msg] {
-        return [msg1, msg2, msg3, msg4, msg5, msg6, msg7]
+        return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9]
+    }
+}
+
+public extension Double {
+    public static var random: Double {
+        return Double(arc4random()) / 0xFFFFFFFF
+    }
+    public static func random(min: Double, max: Double) -> Double {
+        return Double.random * (max - min) + min
     }
 }

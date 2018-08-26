@@ -11,8 +11,9 @@ import UIKit
 class DrawVC: UIViewController {
     
     // MARK: - Properties
+    @IBOutlet weak var infoLbl: UILabel!
     let drawingEngine = DrawingEngine()
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +27,29 @@ class DrawVC: UIViewController {
         drawingAPIMoc.delegate = self
         drawingAPIMoc.requestNextMove()
     }
-
-    @IBAction func removeAll(_ sender: UIButton) {
-        
-        for sublayer in view.layer.sublayers! where sublayer is CAShapeLayer {
-            sublayer.removeFromSuperlayer()
-        }
-    }
 }
 
 // MARK: - DrawingApiMocProtocol delegate
 extension DrawVC: DrawingApiMocProtocol {
     func draw(msg: Msg) {
         DispatchQueue.main.async {
+            self.infoLbl.text = self.getInfoTxtForMsg(msg: msg)
             self.drawingEngine.drawOn(view: self.view, withMessage: msg)
+        }
+    }
+    
+    private func getInfoTxtForMsg(msg: Msg) -> String {
+        switch msg.msg {
+        case MsgsGoToPoint:
+            return "MsgsGoToPoint, point: \(msg.point)"
+        case MsgsDrawLineToPoint:
+            return "MsgsDrawLineToPoint, point: \(msg.point)"
+        case MsgsClearDrawing:
+            return "MsgsClearDrawing, point: \(msg.point)"
+        case MsgsDoNothing:
+            return "MsgsDoNothing, point: \(msg.point)"
+        default:
+            return "Default"
         }
     }
 }

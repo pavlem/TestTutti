@@ -19,6 +19,7 @@
 		9E76950B2132C0550055C487 /* DrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950A2132C0550055C487 /* DrawVC.swift */; };
 		9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950C2132CB2D0055C487 /* DrawingEngine.swift */; };
 		9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */; };
+		9E7695122132E5D10055C487 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7695112132E5D10055C487 /* Double+Extension.swift */; };
 		9E90A63B212C920900496FB6 /* VCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90A63A212C920900496FB6 /* VCObjC.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		9E76950A2132C0550055C487 /* DrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawVC.swift; sourceTree = "<group>"; };
 		9E76950C2132CB2D0055C487 /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
 		9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApiMoc.swift; sourceTree = "<group>"; };
+		9E7695112132E5D10055C487 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		9E90A639212C920900496FB6 /* VCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCObjC.h; sourceTree = "<group>"; };
 		9E90A63A212C920900496FB6 /* VCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,12 +119,12 @@
 				9E76950A2132C0550055C487 /* DrawVC.swift */,
 				9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */,
 				9E76950C2132CB2D0055C487 /* DrawingEngine.swift */,
-				9E50760E2128B82400720020 /* AppDelegate.swift */,
 				9E769503213158340055C487 /* CustomView.swift */,
 				9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */,
 				9E90A639212C920900496FB6 /* VCObjC.h */,
 				9E90A63A212C920900496FB6 /* VCObjC.m */,
 				9E72F5822128BF7900FE7772 /* Tutti-Bridging-Header.h */,
+				9E7695112132E5D10055C487 /* Double+Extension.swift */,
 			);
 			path = Tutti;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 		9E7695102132D1160055C487 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E50760E2128B82400720020 /* AppDelegate.swift */,
 				9E5076152128B82500720020 /* Assets.xcassets */,
 				9E5076122128B82400720020 /* Main.storyboard */,
 				9E50761A2128B82500720020 /* Info.plist */,
@@ -292,6 +295,7 @@
 				9E50760F2128B82400720020 /* AppDelegate.swift in Sources */,
 				9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */,
 				9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */,
+				9E7695122132E5D10055C487 /* Double+Extension.swift in Sources */,
 				9E90A63B212C920900496FB6 /* VCObjC.m in Sources */,
 				9E76950B2132C0550055C487 /* DrawVC.swift in Sources */,
 				9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */,

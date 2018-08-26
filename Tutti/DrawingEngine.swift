@@ -19,7 +19,7 @@ class DrawingEngine {
     func drawOn(view: UIView, withMessage msg: Msg) {
         var path = UIBezierPath()
         path.move(to: self.startingPoint)
-        handle(msg: msg, for: &path)
+        handle(msg: msg, for: &path, onView: view)
         let pathLayer = getPathLayer(forView: view, andPath: path)
         view.layer.addSublayer(pathLayer)
         let pathAnimation = setAnimation()
@@ -27,14 +27,14 @@ class DrawingEngine {
     }
     
     // MARK: - Helper
-    private func handle(msg: Msg, for path: inout UIBezierPath) {
+    private func handle(msg: Msg, for path: inout UIBezierPath, onView view: UIView) {
         switch msg.msg {
         case MsgsGoToPoint:
             goToPoint(msg: msg, path: &path)
         case MsgsDrawLineToPoint:
             drawALineToAPoint(msg: msg, path: &path)
         case MsgsClearDrawing:
-            clearDrawing()
+            clearDrawing(view: view)
         case MsgsDoNothing:
             doNothing()
         default:
@@ -58,8 +58,11 @@ class DrawingEngine {
         print("MsgsDoNothing")
     }
     
-    private func clearDrawing() {
+    private func clearDrawing(view: UIView) {
         print("MsgsClearDrawing")
+        for sublayer in view.layer.sublayers! where sublayer is CAShapeLayer {
+            sublayer.removeFromSuperlayer()
+        }
     }
     
     private func getPathLayer(forView view: UIView, andPath path: UIBezierPath) -> CAShapeLayer {
