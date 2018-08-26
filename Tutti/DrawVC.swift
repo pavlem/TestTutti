@@ -19,9 +19,10 @@ class DrawVC: UIViewController {
     func draw() {
         var path: UIBezierPath!
         path = UIBezierPath()
-        path.move(to: CGPoint(x: self.view.frame.width/2, y: 0.0))
-        path.addLine(to: CGPoint(x: 0.0, y: self.view.frame.size.height))
-        path.addLine(to: CGPoint(x: self.view.frame.size.width, y: self.view.frame.size.height))
+        path.move(to: CGPoint(x: 100.0, y: 100.0))
+        path.addLine(to: CGPoint(x: 120.0, y: 120.0))
+        path.addLine(to: CGPoint(x: 130.0, y: 120.0))
+        path.addLine(to: CGPoint(x: 130.0, y: 100.0))
         path.close()
         
         let pathLayer = CAShapeLayer()
