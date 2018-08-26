@@ -1,23 +1,23 @@
 //
-//  VCObjC.m
+//  DrawObjcVC.m
 //  Tutti
 //
-//  Created by Pavle Mijatovic on 8/21/18.
+//  Created by Pavle Mijatovic on 8/26/18.
 //  Copyright © 2018 Pavle Mijatovic. All rights reserved.
 //
 
-#import "VCObjC.h"
+#import "DrawObjcVC.h"
 #import "DrawingAPI.h"
 
-@interface VCObjC ()
+@interface DrawObjcVC ()
 
 @end
 
-@implementation VCObjC
+@implementation DrawObjcVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self testDraw];
 }
 
@@ -25,10 +25,9 @@
     
     struct Msg **messages = malloc(sizeof(struct Msg*));
     
-//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-//
-//    });
-    
+    //    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+    //
+    //    });
     
     for (int i = 0; i < 6; i++) {
         NSLog(@"========");

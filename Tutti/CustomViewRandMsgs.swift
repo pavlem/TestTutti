@@ -23,7 +23,6 @@ class CustomViewRandMsgs: UIView {
         super.draw(rect)
     
         tuttiAPI()
-        createTriangle()
     }
     
     func tuttiAPI() {
@@ -39,30 +38,5 @@ class CustomViewRandMsgs: UIView {
         }
         
         messages?.deallocate()
-    }
-    
-    func createTriangle() {
-        var path: UIBezierPath!
-        path = UIBezierPath()
-        path.move(to: CGPoint(x: self.frame.width/2, y: 0.0))
-        path.addLine(to: CGPoint(x: 0.0, y: self.frame.size.height))
-        path.addLine(to: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
-        path.close()
-        
-        let pathLayer = CAShapeLayer()
-        pathLayer.frame = self.bounds
-        pathLayer.path = path.cgPath
-        pathLayer.strokeColor = UIColor.red.cgColor
-        pathLayer.fillColor = nil
-        pathLayer.lineWidth = 2.0
-        pathLayer.lineJoin = kCALineJoinBevel
-        
-        self.layer.addSublayer(pathLayer)
-        
-        let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 1.0
-        pathAnimation.fromValue = NSNumber(value: 0.0)
-        pathAnimation.toValue = NSNumber(value: 1.0)
-        pathLayer.add(pathAnimation, forKey: "strokeEnd")
     }
 }

@@ -20,7 +20,8 @@
 		9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950C2132CB2D0055C487 /* DrawingEngine.swift */; };
 		9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */; };
 		9E7695122132E5D10055C487 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7695112132E5D10055C487 /* Double+Extension.swift */; };
-		9E90A63B212C920900496FB6 /* VCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90A63A212C920900496FB6 /* VCObjC.m */; };
+		9E8D854C2132E84600611A01 /* DrawSwiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D854B2132E84600611A01 /* DrawSwiftVC.swift */; };
+		9E8D854F2132E87400611A01 /* DrawObjcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D854E2132E87400611A01 /* DrawObjcVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		9E76950C2132CB2D0055C487 /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
 		9E76950E2132D0B90055C487 /* DrawingApiMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApiMoc.swift; sourceTree = "<group>"; };
 		9E7695112132E5D10055C487 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
-		9E90A639212C920900496FB6 /* VCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCObjC.h; sourceTree = "<group>"; };
-		9E90A63A212C920900496FB6 /* VCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCObjC.m; sourceTree = "<group>"; };
+		9E8D854B2132E84600611A01 /* DrawSwiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawSwiftVC.swift; sourceTree = "<group>"; };
+		9E8D854D2132E87400611A01 /* DrawObjcVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawObjcVC.h; sourceTree = "<group>"; };
+		9E8D854E2132E87400611A01 /* DrawObjcVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawObjcVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,9 @@
 				9E76950C2132CB2D0055C487 /* DrawingEngine.swift */,
 				9E769503213158340055C487 /* CustomView.swift */,
 				9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */,
-				9E90A639212C920900496FB6 /* VCObjC.h */,
-				9E90A63A212C920900496FB6 /* VCObjC.m */,
+				9E8D854B2132E84600611A01 /* DrawSwiftVC.swift */,
+				9E8D854D2132E87400611A01 /* DrawObjcVC.h */,
+				9E8D854E2132E87400611A01 /* DrawObjcVC.m */,
 				9E72F5822128BF7900FE7772 /* Tutti-Bridging-Header.h */,
 				9E7695112132E5D10055C487 /* Double+Extension.swift */,
 			);
@@ -291,12 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E8D854F2132E87400611A01 /* DrawObjcVC.m in Sources */,
+				9E8D854C2132E84600611A01 /* DrawSwiftVC.swift in Sources */,
 				9E769504213158350055C487 /* CustomView.swift in Sources */,
 				9E50760F2128B82400720020 /* AppDelegate.swift in Sources */,
 				9E76950F2132D0B90055C487 /* DrawingApiMoc.swift in Sources */,
 				9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */,
 				9E7695122132E5D10055C487 /* Double+Extension.swift in Sources */,
-				9E90A63B212C920900496FB6 /* VCObjC.m in Sources */,
 				9E76950B2132C0550055C487 /* DrawVC.swift in Sources */,
 				9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */,
 			);
