@@ -18,6 +18,7 @@
 		9E769504213158350055C487 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769503213158340055C487 /* CustomView.swift */; };
 		9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */; };
 		9E76950B2132C0550055C487 /* DrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950A2132C0550055C487 /* DrawVC.swift */; };
+		9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E76950C2132CB2D0055C487 /* DrawingEngine.swift */; };
 		9E90A63B212C920900496FB6 /* VCObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90A63A212C920900496FB6 /* VCObjC.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		9E769503213158340055C487 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		9E76950821316EBA0055C487 /* CustomViewRandMsgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRandMsgs.swift; sourceTree = "<group>"; };
 		9E76950A2132C0550055C487 /* DrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawVC.swift; sourceTree = "<group>"; };
+		9E76950C2132CB2D0055C487 /* DrawingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingEngine.swift; sourceTree = "<group>"; };
 		9E90A639212C920900496FB6 /* VCObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCObjC.h; sourceTree = "<group>"; };
 		9E90A63A212C920900496FB6 /* VCObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCObjC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 			children = (
 				9E5076122128B82400720020 /* Main.storyboard */,
 				9E76950A2132C0550055C487 /* DrawVC.swift */,
+				9E76950C2132CB2D0055C487 /* DrawingEngine.swift */,
 				9E50760E2128B82400720020 /* AppDelegate.swift */,
 				9E5076102128B82400720020 /* ViewController.swift */,
 				9E769503213158340055C487 /* CustomView.swift */,
@@ -280,6 +283,7 @@
 				9E5076112128B82400720020 /* ViewController.swift in Sources */,
 				9E769504213158350055C487 /* CustomView.swift in Sources */,
 				9E50760F2128B82400720020 /* AppDelegate.swift in Sources */,
+				9E76950D2132CB2D0055C487 /* DrawingEngine.swift in Sources */,
 				9E90A63B212C920900496FB6 /* VCObjC.m in Sources */,
 				9E76950B2132C0550055C487 /* DrawVC.swift in Sources */,
 				9E76950921316EBA0055C487 /* CustomViewRandMsgs.swift in Sources */,

@@ -10,59 +10,28 @@ import UIKit
 
 class DrawVC: UIViewController {
     
-//    var path: UIBezierPath!
-
-    var initalPoint = CGPoint(x: 100.0, y: 100.0)
+    let drawingEngine = DrawingEngine()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let points = [CGPoint(x: 120, y: 120), CGPoint(x: 150, y: 200), CGPoint(x: 150, y: 100), CGPoint(x: 250, y: 50)]
-        
+        let msg1 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 120, y: 120))
+        let msg2 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 150, y: 200))
+        let msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 150, y: 100))
+        let msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 250, y: 50))
+        let msg5 = Msg(msg: MsgsDoNothing, point: CGPoint(x: 200, y: 50))
+        let msg6 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 300, y: 300))
+        let msg7 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 200))
+
+        let msgs = [msg1, msg2, msg3, msg4, msg5, msg6, msg7]
+
         DispatchQueue.global(qos: .background).async {
-            
-            for (index, point) in points.enumerated() {
+            for msgLo in msgs {
                 sleep(1)
-                
                 DispatchQueue.main.async {
-                    var path: UIBezierPath!
-                    path = UIBezierPath()
-                    path.move(to: self.initalPoint)
-                    
-//                    if index == 2 {
-//                        self.initalPoint = point
-//                        path.move(to: self.initalPoint)
-//                    } else {
-//                        path.addLine(to: point)
-//                        self.initalPoint = point
-//                    }
-                    
-                    path.addLine(to: point)
-                    self.initalPoint = point
-                    
-                    let pathLayer = CAShapeLayer()
-                    pathLayer.frame = self.view.bounds
-                    pathLayer.path = path.cgPath
-                    pathLayer.strokeColor = UIColor.red.cgColor
-                    pathLayer.fillColor = nil
-                    pathLayer.lineWidth = 2.0
-                    pathLayer.lineJoin = kCALineJoinBevel
-                    
-                    self.view.layer.addSublayer(pathLayer)
-                    let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-                    pathAnimation.duration = 0.5
-                    pathAnimation.fromValue = NSNumber(value: 0.0)
-                    pathAnimation.toValue = NSNumber(value: 1.0)
-                    pathLayer.add(pathAnimation, forKey: "strokeEnd")
-                    
+                    self.drawingEngine.drawOn(view: self.view, withMessage: msgLo)
                 }
             }
-            
-            
-            
-
-            
-
         }
     }
 }
