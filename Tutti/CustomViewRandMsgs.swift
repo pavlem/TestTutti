@@ -28,13 +28,14 @@ class CustomViewRandMsgs: UIView {
     
     func tuttiAPI() {
     
-        var messages: UnsafeMutablePointer<Msg>? = UnsafeMutablePointer<Msg>.allocate(capacity: 0)
+        var messages: UnsafeMutablePointer<Msg>? = UnsafeMutablePointer<Msg>.allocate(capacity: 5)
 
-        for i in 0..<10 {
+        for i in 0..<5 {
             requestNextMove(&messages + i)
-            let msg: Msg = messages![i]
+            var msg: Msg = messages![i]
             print(msg)
             print("========")
+            freeMsg(&msg)
         }
         
         messages?.deallocate()

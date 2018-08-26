@@ -36,9 +36,9 @@
         struct Msg *message = messages[i];
         int value = message->msg;
         CGPoint point = message->point;
-        NSLog(@"%@, %@", @(value), @(point));
-        NSLog(@"message is: %p", message);
-        NSLog(@"messages + i is: %p", messages + i);
+        NSLog(@"value: %@, point: %@", @(value), @(point));
+        NSLog(@"message address is: %p", message);
+        NSLog(@"messages + i address is: %p", messages + i);
         NSLog(@"");
     }
     
