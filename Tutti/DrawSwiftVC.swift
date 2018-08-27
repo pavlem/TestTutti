@@ -13,14 +13,16 @@ class DrawSwiftVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var messages: UnsafeMutablePointer<Msg>? = UnsafeMutablePointer<Msg>.allocate(capacity: 5)
+        var messages: UnsafeMutablePointer<Msg>? = UnsafeMutablePointer<Msg>.allocate(capacity: 0)
         
         for i in 0..<5 {
             requestNextMove(&messages + i)
-            var msg: Msg = messages![i]
+            let msg: Msg = messages![i]
+            let s = MemoryLayout.size(ofValue: msg)
+            print(s)
             print(msg)
             print("========")
-            freeMsg(&msg)
+//            freeMsg(&msg)
         }
         
         messages?.deallocate()

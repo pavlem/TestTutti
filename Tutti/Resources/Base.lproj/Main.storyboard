@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ueJ-oA-Aeu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G3J-Fe-cXL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiW-ve-vN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="-1002"/>
+            <point key="canvasLocation" x="2585" y="-1159"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iVa-Gc-Qgf">
@@ -49,12 +49,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbs-s8-JmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066" y="-1002"/>
+            <point key="canvasLocation" x="3425" y="-1159"/>
         </scene>
         <!--Draw SwiftVC-->
+        <scene sceneID="6RU-Pw-IZy">
+            <objects>
+                <viewController id="zOS-kh-gnH" customClass="DrawSwiftVC" customModule="Tutti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGn-ku-AIv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Lnw-jA-dPE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSU-iB-Ur7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="-255"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="SAj-HF-mqb">
             <objects>
-                <viewController id="qQm-2v-Qd6" customClass="DrawSwiftVC" customModule="Tutti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qQm-2v-Qd6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zqe-XG-oYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBg-ft-CGJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="-246"/>
+            <point key="canvasLocation" x="361" y="523"/>
         </scene>
         <!--DrawVC-->
         <scene sceneID="0fl-0d-4Co">
@@ -93,7 +108,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zu0-3f-yq4" firstAttribute="trailing" secondItem="eSS-rA-czz" secondAttribute="trailing" constant="16" id="NMt-uk-3TE"/>
                             <constraint firstItem="eSS-rA-czz" firstAttribute="leading" secondItem="zu0-3f-yq4" secondAttribute="leading" constant="16" id="PzH-gL-aNf"/>
@@ -108,6 +123,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P69-qC-5jA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="361" y="-1748"/>
+        </scene>
+        <!--Draw ObjcVC-->
+        <scene sceneID="qrf-Mq-Pjt">
+            <objects>
+                <viewController id="wbW-w7-Nko" customClass="DrawObjcVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cyR-CI-r2U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.27208116319999998" green="1" blue="0.95890770160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="5O5-rL-bc2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQ1-SH-Ar9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="-1023"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dd2-fy-DdN">
@@ -125,7 +155,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRb-OQ-l5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="-1001"/>
+            <point key="canvasLocation" x="1721" y="-1158"/>
         </scene>
     </scenes>
 </document>

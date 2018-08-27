@@ -11,7 +11,9 @@ import UIKit
 class DrawVC: UIViewController {
     
     // MARK: - Properties
+    // Outlets
     @IBOutlet weak var infoLbl: UILabel!
+    // Constants
     let drawingEngine = DrawingEngine()
 
     // MARK: - Lifecycle

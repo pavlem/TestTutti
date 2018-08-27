@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class DrawingEngine {
+@objc class DrawingEngine: NSObject {
     
     static let shared = DrawingEngine()
 
     // MARK: - API
     var startingPoint = CGPoint(x: 100.0, y: 100.0)
 
-    func drawOn(view: UIView, withMessage msg: Msg) {
+    @objc public func drawOn(view: UIView, withMessage msg: Msg) {
         var path = UIBezierPath()
         path.move(to: self.startingPoint)
         handle(msg: msg, for: &path, onView: view)
