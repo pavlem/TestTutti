@@ -34,17 +34,20 @@ class DrawingApiMoc {
     let msg3 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 300))
     let msg4 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 300, y: 300))
     let msg5 = Msg(msg: MsgsDoNothing, point: CGPoint(x: 200, y: 50))
-    let msg6 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 300, y: 400))
-    let msg7 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 350, y: 400))
+    let msg6 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 100, y: 200))
+    let msg7 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 300))
     let msg8 = Msg(msg: MsgsClearDrawing, point: CGPoint(x: 350, y: 400))
-    let msg9 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 200, y: 600))
+    let msg9 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 250, y: 400))
+    let msg10 = Msg(msg: MsgsGoToPoint, point: CGPoint(x: 100, y: 100))
+    let msg11 = Msg(msg: MsgsDrawLineToPoint, point: CGPoint(x: 50, y: 250))
+    let msg12 = Msg(msg: MsgsClearDrawing, point: CGPoint(x: 200, y: 600))
 
     var msgs: [Msg] {
-        return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9]
+        return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10, msg11, msg12]
     }
 }
 
-public extension Double {
+extension Double {
     public static var random: Double {
         return Double(arc4random()) / 0xFFFFFFFF
     }

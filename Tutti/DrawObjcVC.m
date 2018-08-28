@@ -14,6 +14,9 @@
 @interface DrawObjcVC ()
 
 @property (nonatomic, strong) DrawingEngine *drawingEngine;
+@property (weak, nonatomic) IBOutlet UIView *drawingCanvas;
+@property (nonatomic, assign) BOOL goToNextPoint;
+@property (weak, nonatomic) IBOutlet UILabel *infoLbl;
 
 @end
 
@@ -24,30 +27,41 @@
     
     _drawingEngine = [[DrawingEngine alloc] init];
     
-    [self testDraw];
+    [self drawPoints];
 }
 
-- (void)testDraw {
+- (void)drawPoints {
     
-    struct Msg **messages = malloc(sizeof(struct Msg*));
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        for (int i = 0; i < 6; i++) {
-            NSLog(@"========");
-            requestNextMove(messages + i);
-            struct Msg *message = messages[i];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+        for (int i = 0; i < 48; i++) {
+            
+            self.goToNextPoint = NO;
+            struct Msg *message;
+            requestNextMove(&message);
             int value = message->msg;
             CGPoint point = message->point;
-            NSLog(@"value: %@, point: %@", @(value), @(point));
-            NSLog(@"message address is: %p", message);
-            NSLog(@"messages + i address is: %p", messages + i);
-            NSLog(@"sizeof myObject: %ld", sizeof(*message));
-            NSLog(@"");
-            // TODO: - When memory excepton is fixed use this method
-//            dispatch_async(dispatch_get_main_queue(), ^(void){
-//                [self.drawingEngine drawOnView:self.view withMessage:*message];
-//            });
+            NSLog(@"%@, %@", @(value), @(point));
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                self.infoLbl.text = [NSString stringWithFormat: @"%@", [self.drawingEngine getInfoTxtForMsgWithMsg: *message]];
+                [self.drawingEngine drawOnView:self.drawingCanvas withMessage:*message completion:^(BOOL isAnimationFinished) {
+                    freeMsg(message);
+                    self.goToNextPoint = YES;
+                    NSLog(@"sssss");
+                }];
+            });
+            
+            while (self.goToNextPoint == NO) {
+            }
+            
+            NSLog(@"====================");
+            NSLog(@"%d", i);
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            self.infoLbl.text = [NSString stringWithFormat: @"Finished"];
+        });
+        
     });
 }
 

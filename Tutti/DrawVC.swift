@@ -13,6 +13,7 @@ class DrawVC: UIViewController {
     // MARK: - Properties
     // Outlets
     @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var drawingCanvas: UIView!
     // Constants
     let drawingEngine = DrawingEngine()
 
@@ -35,23 +36,9 @@ class DrawVC: UIViewController {
 extension DrawVC: DrawingApiMocProtocol {
     func draw(msg: Msg) {
         DispatchQueue.main.async {
-            self.infoLbl.text = self.getInfoTxtForMsg(msg: msg)
-            self.drawingEngine.drawOn(view: self.view, withMessage: msg)
-        }
-    }
-    
-    private func getInfoTxtForMsg(msg: Msg) -> String {
-        switch msg.msg {
-        case MsgsGoToPoint:
-            return "MsgsGoToPoint, point: \(msg.point)"
-        case MsgsDrawLineToPoint:
-            return "MsgsDrawLineToPoint, point: \(msg.point)"
-        case MsgsClearDrawing:
-            return "MsgsClearDrawing, point: \(msg.point)"
-        case MsgsDoNothing:
-            return "MsgsDoNothing, point: \(msg.point)"
-        default:
-            return "Default"
+            self.infoLbl.text = self.drawingEngine.getInfoTxtForMsg(msg: msg)
+            self.drawingEngine.drawOn(view: self.drawingCanvas, withMessage: msg, completion: { (isAnimationFinished) in
+            })
         }
     }
 }

@@ -16,14 +16,32 @@ import UIKit
     // MARK: - API
     var startingPoint = CGPoint(x: 100.0, y: 100.0)
 
-    @objc public func drawOn(view: UIView, withMessage msg: Msg) {
+    @objc public func drawOn(view: UIView, withMessage msg: Msg, completion: @escaping (Bool) -> Void ) {
         var path = UIBezierPath()
         path.move(to: self.startingPoint)
         handle(msg: msg, for: &path, onView: view)
         let pathLayer = getPathLayer(forView: view, andPath: path)
         view.layer.addSublayer(pathLayer)
         let pathAnimation = setAnimation()
+        pathAnimation.completion = { finished in
+            completion(true)
+        }
         pathLayer.add(pathAnimation, forKey: "strokeEnd")
+    }
+    
+    @objc func getInfoTxtForMsg(msg: Msg) -> String {
+        switch msg.msg {
+        case MsgsGoToPoint:
+            return "MsgsGoToPoint, point: \(msg.point)"
+        case MsgsDrawLineToPoint:
+            return "MsgsDrawLineToPoint, point: \(msg.point)"
+        case MsgsClearDrawing:
+            return "MsgsClearDrawing, point: \(msg.point)"
+        case MsgsDoNothing:
+            return "MsgsDoNothing, point: \(msg.point)"
+        default:
+            return "Default"
+        }
     }
     
     // MARK: - Helper
@@ -69,18 +87,21 @@ import UIKit
         let pathLayer = CAShapeLayer()
         pathLayer.frame = view.bounds
         pathLayer.path = path.cgPath
-        pathLayer.strokeColor = UIColor.red.cgColor
+        pathLayer.strokeColor = UIColor.outlineStrokeColor.cgColor
         pathLayer.fillColor = nil
-        pathLayer.lineWidth = 2.5
+        pathLayer.lineWidth = 3.0
         pathLayer.lineJoin = kCALineJoinBevel
+        pathLayer.lineCap = kCALineCapRound
         return pathLayer
     }
     
     private func setAnimation() -> CABasicAnimation {
         let pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        pathAnimation.duration = 0.4
+        pathAnimation.duration = 0.3
         pathAnimation.fromValue = NSNumber(value: 0.0)
         pathAnimation.toValue = NSNumber(value: 1.0)
+
+
         return pathAnimation
     }
 }
